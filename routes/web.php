@@ -10,7 +10,7 @@ use App\Http\Controllers\Admin\BukuController;
 use App\Http\Controllers\Admin\TransaksiController;
 use App\Http\Controllers\Admin\KategoriController;
 use App\Http\Controllers\Admin\PengembalianController;
-use App\Http\Controllers\Admin\LaporanController;
+use App\Http\Controllers\Admin\LaporanController as AdminLaporan;
 
 
 
@@ -18,6 +18,8 @@ use App\Http\Controllers\Admin\LaporanController;
 use App\Http\Controllers\User\UserDashboardController;
 use App\Http\Controllers\User\BukuUserController;
 use App\Http\Controllers\User\UserPengembalianController;
+use App\Http\Controllers\User\LaporanController as UserLaporan;
+
 
 Route::get('/', function () {
     return redirect()->route('login');
@@ -89,8 +91,8 @@ Route::middleware(['auth', 'role:admin'])
         Route::delete('/pengembalian/{id}', [PengembalianController::class, 'destroy'])->name('pengembalian.destroy');
 
         // Laporan 
-        Route::get('/laporan', [LaporanController::class, 'index'])->name('laporan.index');
-        Route::get('/laporan/pdf', [LaporanController::class, 'exportPdf'])->name('laporan.pdf');
+        Route::get('/laporan', [AdminLaporan::class, 'index'])->name('laporan.index');
+        Route::get('/laporan/pdf', [AdminLaporan::class, 'exportPdf'])->name('laporan.pdf');
         Route::get('/laporan/excel', [LaporanController::class, 'exportExcel'])->name('laporan.excel');
 
     });
@@ -117,5 +119,9 @@ Route::middleware(['auth', 'role:user'])
 
         Route::post('/pengembalian/{id}', [UserPengembalianController::class, 'kembalikan'])
             ->name('pengembalian.kembalikan');
+
+        // Laporan
+        Route::get('/laporan', [App\Http\Controllers\User\LaporanController::class, 'index'])->name('laporan.index');
+        Route::get('/laporan/pdf', [App\Http\Controllers\User\LaporanController::class, 'exportPdf'])->name('laporan.pdf');
 
     });

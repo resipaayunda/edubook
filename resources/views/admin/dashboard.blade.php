@@ -116,26 +116,7 @@
             </div>
         </div>
 
-        {{-- TERLAMBAT --}}
-        <div class="col-xl-3 col-md-6">
-            <div class="card custom-card shadow-sm border-0 h-100 text-white bg-gradient-danger">
-                <div class="card-body">
-                    <div class="d-flex justify-content-between align-items-start">
-                        <div>
-                            <div class="text-uppercase small fw-bold opacity-75">Terlambat</div>
-                            <h2 class="fw-bold mb-0 mt-1">{{ $terlambat }}</h2>
-                        </div>
-                        <div class="icon-shape">
-                            <i class="fas fa-clock fs-3"></i>
-                        </div>
-                    </div>
-                    <div class="mt-3 small">
-                        <span class="opacity-75 font-weight-bold"><i class="fas fa-exclamation-circle"></i> Segera Tindak Lanjuti</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+        
 
     {{-- Detail Row --}}
     <div class="row g-4 mt-2">

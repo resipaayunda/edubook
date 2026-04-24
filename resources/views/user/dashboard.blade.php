@@ -188,7 +188,7 @@
                             $terlambat = is_null($t->tanggal_kembali) && $jatuhTempo->lt($today);
                         @endphp
                         <tr>
-                            <td class="ps-4 text-muted fw-bold">#{{ $loop->iteration }}</td>
+                            <td class="ps-4 text-muted fw-bold">{{ $loop->iteration }}</td>
                             <td class="text-start fw-bold text-dark">{{ $t->buku }}</td>
                             <td class="small">{{ Carbon::parse($t->tanggal_pinjam)->format('d M Y') }}</td>
                             <td class="small fw-bold {{ $terlambat ? 'text-danger' : '' }}">

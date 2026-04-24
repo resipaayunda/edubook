@@ -120,22 +120,7 @@
             </div>
         </div>
 
-        <div class="col-md-4">
-            <div class="card stat-card shadow-sm bg-white">
-                <div class="card-body p-4 d-flex align-items-center">
-                    <div class="icon-box bg-danger bg-opacity-10 text-danger me-3">
-                        <i class="fas fa-exclamation-triangle"></i>
-                    </div>
-                    <div>
-                        <div class="small text-muted fw-bold">Terlambat</div>
-                        <div class="h3 mb-0 fw-bold text-danger">
-                            {{ $transaksis->filter(fn($t) => is_null($t->tanggal_kembali) && Carbon::parse($t->jatuh_tempo)->lt($today))->count() }}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+        
 
     {{-- TABLE --}}
     <div class="card custom-card shadow-sm">

@@ -176,8 +176,8 @@
                         <select name="role" class="form-select border-0 bg-light" required style="border-radius: 10px;">
                             <option value="">Pilih Role</option>
                             <option value="Admin">Admin</option>
-                            <option value="Petugas">Petugas</option>
-                            <option value="Peminjam">Peminjam</option>
+                            <option value="Petugas">User</option>
+                           
                         </select>
                     </div>
                 </div>
@@ -217,8 +217,8 @@
                         <label class="small fw-bold text-muted mb-1">Role Akses</label>
                         <select name="role" class="form-select border-0 bg-light" required style="border-radius: 10px;">
                             <option value="Admin" {{ $anggota->role == 'Admin' ? 'selected' : '' }}>Admin</option>
-                            <option value="Petugas" {{ $anggota->role == 'Petugas' ? 'selected' : '' }}>Petugas</option>
-                            <option value="Peminjam" {{ $anggota->role == 'Peminjam' ? 'selected' : '' }}>Peminjam</option>
+                            <option value="Petugas" {{ $anggota->role == 'User' ? 'selected' : '' }}>User</option>
+                           
                         </select>
                     </div>
                 </div>

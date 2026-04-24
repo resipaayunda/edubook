@@ -21,6 +21,11 @@
                         <span class="nav-text">Pengembalian</span>
                     </a>
 
+                    <a class="nav-link {{ request()->routeIs('admin.laporan.*') ? 'active-item' : '' }}" href="{{ route('user.laporan.index') }}">
+                        <div class="nav-icon"><i class="fas fa-book"></i></div>
+                        <span class="nav-text">Laporan</span>
+                    </a>
+
                 </div>
             </div>
         </nav>
